@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blob Maker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="output-container">
+                <div class="blob"></div>
+            </div>
+            <div class="editor-container">
+                <div class="row">
+                    <div class="input-number-container">
+                        <label for="width">width</label>
+                        <input type="number" value="300" name="width" id="width">
+                    </div>
+                    <div class="input-number-container">
+                        <label for="width">height</label>
+                        <input type="number" value="300" name="height" id="height">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-container">
+                        <label for="rad-top-left">Top Left</label>
+                        <input class="rad" value="0" min="0" max="100" step="1" type="range" name="rad-top-left"
+                            id="rad-top-left">
+                    </div>
+                    <div class="input-container">
+                        <label for="rad-top-right">Top Right</label>
+                        <input class="rad" value="0" min="0" max="100" step="1" type="range" name="rad-top-right"
+                            id="rad-top-right">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-container">
+                        <label for="rad-bottom-left">Bottom Left</label>
+                        <input class="rad" value="0" min="0" max="100" step="1" type="range" name="rad-bottom-left"
+                            id="rad-bottom-left">
+                    </div>
+                    <div class="input-container">
+                        <label for="rad-bottom-right">Bottom Right</label>
+                        <input class="rad" value="0" min="0" max="100" step="1" type="range" name="rad-bottom-right"
+                            id="rad-bottom-right">
+                    </div>
+                </div>
+            </div>
+            <div class="copy">
+                <input readonly type="text" name="copy" id="copy" value="border-radius: ;width: ;height: ;">
+                <button class="copy-btn">Copy</button>
+            </div>
+        </div>
+        <footer>
+            <p>Copyrights 2023 @ <a href="https://sm8rtdev.online/">Hessen Nasser</a> </p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
