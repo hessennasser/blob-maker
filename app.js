@@ -8,40 +8,16 @@ let radTopLeft = document.querySelector("#rad-top-left");
 let radTopRight = document.querySelector("#rad-top-right");
 let radBottomLeft = document.querySelector("#rad-bottom-left");
 let radBottomRight = document.querySelector("#rad-bottom-right");
-// Edit The Width And Height For Blob Element 
-width.addEventListener("change", function () {
-    blob.style.width = `${width.value}px`;
+
+let inputs = [width, height, radTopLeft, radTopRight, radBottomLeft, radBottomRight];
+
+inputs.forEach(function (inp) {
+    inp.addEventListener("change", createBlob);
 });
-height.addEventListener("change", function () {
-    blob.style.height = `${height.value}px`;
-});
-
-
-
-// // Edit Border Radius For Blob Element 
-// radTopLeft.addEventListener("change", function () {
-//     blob.style.borderTopLeftRadius = `${radTopLeft.value}%`;
-// });
-// radTopRight.addEventListener("change", function () {
-//     blob.style.borderTopRightRadius = `${radTopRight.value}%`;
-// });
-// radBottomLeft.addEventListener("change", function () {
-//     blob.style.borderBottomLeftRadius = `${radBottomLeft.value}%`;
-// });
-// radBottomRight.addEventListener("change", function () {
-//     blob.style.borderBottomRightRadius = `${radBottomRight.value}%`;
-// });
-
-
-
-let radiusInputs = document.querySelectorAll(".rad");
-radiusInputs.forEach(function (inp) {
-    inp.addEventListener("change", editRadius);
-});
-function editRadius() {
+function createBlob() {
     let borderRadius = `${radTopLeft.value}% ${100 - radTopLeft.value}% ${radTopRight.value}% ${100 - radTopRight.value}% / ${radBottomLeft.value}% ${100 - radBottomLeft.value}% ${radBottomRight.value}% ${100 - radBottomRight.value}%;`;
-    blob.style = `border-radius: ${borderRadius}`;
-    copy.value = `border-radius: ${borderRadius}width: ${width.value};height: ${height.value};`;
+    blob.style.cssText = `border-radius: ${borderRadius}; height: ${height.value}px; width: ${width.value}px`;
+    copy.value = `border-radius: ${borderRadius}; height: ${height.value}px; width: ${width.value}px`;
 }
 
 // Copy Border Radius 
